@@ -6,7 +6,7 @@ const userSchema=new mongoose.Schema({
    password: {type:String},
    mobileNumber: {type:String},
   gender: {type:String},
-  role: {type:String,enum:["admin","customer"]}
+  role: {type:String,enum:["admin","user"]}
 
 
 });

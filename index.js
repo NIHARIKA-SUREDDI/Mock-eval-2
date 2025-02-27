@@ -1,5 +1,6 @@
 const express= require('express');
 const connectdb = require('./config/db');
+const userRouter = require('./routes/user.routes');
 require('dotenv').config();
 
 
@@ -10,7 +11,8 @@ const app=express();
 app.use(express.json());
 
 
-
+//routes
+app.use('/user',userRouter)
 
 app.get('/',(req,res)=>{
     res.send("this is test route");
