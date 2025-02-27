@@ -6,7 +6,7 @@ const authmiddleware=(...allowedRole)=>{
         if(!token){
             res.status(403).json({msg:"token not found"})
         }else{
-            var decoded=jwt.verify(token,'shhhhh');
+            var decoded=jwt.verify(token,process.env.JWT_SECRET_KEY);
             if(decoded){
                 if(allowedRole.includes(decoded.role)){
                     req.body.userId=decoded.userId;
